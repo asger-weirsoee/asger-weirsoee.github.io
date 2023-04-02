@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PSA - memes
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Makes some subtle memes for the PSA. Maybe it'll make it more fun registering time?
 // @author       Asger Geel Weirsøe
 // @match        *://psa-fs.ent.cgi.com/psc/fsprda/*
@@ -19,8 +19,7 @@
         console.log("                    Created by asger.weirsoe");
         console.log("##############################################");
         console.log("");
-        console.log(" if you have any idears to make it funnier");
-        console.log(" you are free to send them to asger.weirsoe@cgi.com");
+        console.log("All ideas are welcome: asger.weirsoe@cgi.com");
         var checkDiv = setInterval(() => {
             $('[id$=ICOK]').prop('value', 'OK BOOMER');
         });
