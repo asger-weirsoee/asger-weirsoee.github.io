@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Firepoker Cheat
-// @namespace    http://tampermonkey.net/
-// @version      1
+// @namespace    https://asger-weirsoee.github.io/
+// @version      1.1
 // @description  Adds what other people have voted as a title of the element!
 // @author       asger.weirsoe
 // @match        https://firepoker.io/

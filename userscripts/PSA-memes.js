@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PSA - memes
-// @namespace    http://tampermonkey.net/
-// @version      0.2
+// @namespace    https://asger-weirsoee.github.io/
+// @version      0.3
 // @description  Makes some subtle memes for the PSA. Maybe it'll make it more fun registering time?
 // @author       Asger Geel Weirsøe
 // @match        *://psa-fs.ent.cgi.com/psc/fsprda/*
