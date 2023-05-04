@@ -1,0 +1,22 @@
+---
+layout: page
+title: "About"
+description: "Short about me page."
+#header-img: "img/bg-me-2022.jpg"
+header-mask: 0.5
+multilingual: true
+usecomments: true
+---
+{% include multilingual-sel.html %}
+<!-- Danish Version -->
+<div class="dk post-container">
+    {% capture about_dk %}{% include about/dk.md %}{% endcapture %}
+    {{ about_dk | markdownify }}
+</div>
+<!-- English Version -->
+<div class="en post-container">
+    {% capture about_en %}{% include about/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
+</div>
+
+{% include comments.html %}

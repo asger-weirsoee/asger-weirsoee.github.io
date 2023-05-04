@@ -1,0 +1,20 @@
+
+<div>
+  {% if page.language == "en" %}
+  <div>Comment section:</div>
+  {% else %}
+  <div>Kommentar sektion:</div> 
+  {% endif %}
+
+  <div id="comment-section"></div>
+  <script>
+  initComments({
+    node: document.getElementById("comment-section"),
+    defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
+    serverName: "cactus.chat",
+    siteName: "blog.weircon.dk",
+    commentSectionId: "{{ page.url | remove_slashes }}"
+  })
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://cactus.chat" rel="nofollow">comments powered by matrix.org.</a></noscript>
+</div>
