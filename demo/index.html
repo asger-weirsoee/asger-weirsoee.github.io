@@ -7,19 +7,19 @@
     <body>
         <div class="post-preview">
             <a href="https://asciinema.org/a/113463">
-                <h2 class="post-title
-                ">Asciinema</h2>
-                <h3 class="post-subtitle">Asciinema is a free and open source solution for recording terminal sessions and sharing them on the web.</h3>
-                <div class="post-content-preview">
-                    <asciinema-player src="https://asciinema.org/a/113463" cols="80" rows="24"></asciinema-player>
-                </div>
+                <h2 class="post-title">Releasing software DEMO</h2>
+                <h3 class="post-subtitle">Optagelsen er lavet med asciinema</h3>
             </a>
             <p class="post-meta">
-                Posted by Asger Weirsøe on 2017-01-01
+                Lavet af Asger Weirsøe
             </p>
         </div>
         <hr>
-        
+        <div id="demo"></div>
     </body>
+
+    <script>
+        AsciinemaPlayer.create('demo.cast', document.getElementById('demo'));
+    </script>
 
 </HTML>
