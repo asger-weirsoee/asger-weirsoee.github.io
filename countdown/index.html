@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Flip Example Preset</title>
+
+        <link rel="stylesheet" href="flip/flip.min.css" />
+    </head>
+    <body>
+        <!-- START OF FLIP EXAMPLE PRESET -->
+
+        <style>
+            .tick {
+                padding-bottom: 1em;
+                font-size: 1rem;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
+                    Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            }
+
+            .tick-label {
+                font-size: 0.375em;
+                text-align: center;
+            }
+
+            .tick-group {
+                margin: 0 0.25em;
+                text-align: center;
+            }
+        </style>
+        <h1>Tid til start af netværksnedgang</h1>
+
+        <div class="tick" data-did-init="countdownStart">
+            <div
+                data-repeat="true"
+                data-layout="horizontal center fit"
+                data-transform="preset(d, h, m, s) -> delay"
+            >
+                <div class="tick-group">
+                    <div
+                        data-key="value"
+                        data-repeat="true"
+                        data-transform="pad(00) -> split -> delay"
+                    >
+                        <span data-view="flip"></span>
+                    </div>
+
+                    <span data-key="label" data-view="text" class="tick-label"></span>
+                </div>
+
+            </div>
+        </div>
+        <h1>Tid netværket skal være oppe igen</h1>
+
+        <div class="tick" data-did-init="countdownStop">
+            <div
+                data-repeat="true"
+                data-layout="horizontal center fit"
+                data-transform="preset(d, h, m, s) -> delay"
+            >
+                <div class="tick-group">
+                    <div
+                        data-key="value"
+                        data-repeat="true"
+                        data-transform="pad(00) -> split -> delay"
+                    >
+                        <span data-view="flip"></span>
+                    </div>
+
+                    <span data-key="label" data-view="text" class="tick-label"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+        function countdownStart(tick) {
+            // Uncomment to set labels to different language ( in this case Dutch )
+            var locale = {
+                YEAR_PLURAL: 'År',
+                YEAR_SINGULAR: 'År',
+                MONTH_PLURAL: 'Måneder',
+                MONTH_SINGULAR: 'Måned',
+                WEEK_PLURAL: 'Uger',
+                WEEK_SINGULAR: 'Uge',
+                DAY_PLURAL: 'Dage',
+                DAY_SINGULAR: 'Dag',
+                HOUR_PLURAL: 'Timer',
+                HOUR_SINGULAR: 'Time',
+                MINUTE_PLURAL: 'Minutter',
+                MINUTE_SINGULAR: 'Minut',
+                SECOND_PLURAL: 'Sekunder',
+                SECOND_SINGULAR: 'Sekund',
+                MILLISECOND_PLURAL: 'Millisekunder',
+                MILLISECOND_SINGULAR: 'Millisekund'
+            };
+
+            for (var key in locale) {
+                if (!locale.hasOwnProperty(key)) { continue; }
+                tick.setConstant(key, locale[key]);
+            }
+
+            Tick.count.down('2024-03-20T17:00:00').onupdate = function (value) {
+                tick.value = value;
+            };
+        }
+        function countdownStop(tick) {
+            // Uncomment to set labels to different language ( in this case Dutch )
+            var locale = {
+                YEAR_PLURAL: 'År',
+                YEAR_SINGULAR: 'År',
+                MONTH_PLURAL: 'Måneder',
+                MONTH_SINGULAR: 'Måned',
+                WEEK_PLURAL: 'Uger',
+                WEEK_SINGULAR: 'Uge',
+                DAY_PLURAL: 'Dage',
+                DAY_SINGULAR: 'Dag',
+                HOUR_PLURAL: 'Timer',
+                HOUR_SINGULAR: 'Time',
+                MINUTE_PLURAL: 'Minutter',
+                MINUTE_SINGULAR: 'Minut',
+                SECOND_PLURAL: 'Sekunder',
+                SECOND_SINGULAR: 'Sekund',
+                MILLISECOND_PLURAL: 'Millisekunder',
+                MILLISECOND_SINGULAR: 'Millisekund'
+            };
+
+            for (var key in locale) {
+                if (!locale.hasOwnProperty(key)) { continue; }
+                tick.setConstant(key, locale[key]);
+            }
+
+            Tick.count.down('2024-03-20T23:59:00').onupdate = function (value) {
+                tick.value = value;
+            };
+        }
+        </script>
+
+        <!-- END OF FLIP EXAMPLE PRESET -->
+
+        <script src="flip/flip.min.js"></script>
+    </body>
+</html>
